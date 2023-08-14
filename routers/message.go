@@ -16,7 +16,6 @@ func MessageRouter(r *gin.RouterGroup) {
 
 	// get all messages
 	r.GET("/", c.GetMessages)
-
 	// create new message if authenticated
 	r.POST("/", middlewares.AuthMiddleWare(repositories.UserRepository()), c.CreateMessage)
 
